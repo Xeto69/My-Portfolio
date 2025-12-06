@@ -473,6 +473,295 @@
       transform: scale(1.2);
     }
 
+    .tools-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 10px;
+    }
+
+    .tool-item {
+      background: var(--accent);
+      color: white;
+      padding: 8px 12px;
+      border-radius: 8px;
+      font-weight: bold;
+      font-size: 0.95rem;
+    }
+
+  </style>
+</head>
+<body>
+
+<div class="theme-toggle" onclick="toggleTheme()">Toggle Theme</div>
+<header>
+  <div class="logo">JL</div>
+  <h1>My Virtual Assistant Portfolio</h1>
+</header>
+
+<div class="container">
+  <div class="profile">
+    <img src="https://via.placeholder.com/130" alt="Profile Photo" />
+    <h1>Hi, I'm John Lloyd!</h1>
+    <p>
+      I am a <strong>college student</strong> new to the Virtual Assistant industry.
+      I started this journey to <strong>fund my tuition</strong> while gaining valuable skills.
+      Motivated, fast-learning, and committed to high-quality support.
+    </p>
+    <div class="btns">
+      <a class="btn" href="#skills">Skills</a>
+      <a class="btn" href="#services">Services</a>
+      <a class="btn" href="#projects">Projects</a>
+      <a class="btn" href="#contact">Contact</a>
+      <a class="btn" href="#tools">Tools</a>
+    </div>
+    <div class="download-btns">
+      <a class="btn" href="resume.pdf" download>Download Resume</a>
+    </div>
+    <div class="social-icons">
+      <a href="#" title="LinkedIn">🔗</a>
+      <a href="https://www.facebook.com/oxc.xeto" title="Facebook">📘</a>
+      <a href="#" title="WhatsApp">💬</a>
+    </div>
+  </div>
+
+  <div class="section" id="skills">
+    <h2>Skills</h2>
+    <p>
+      • Basic admin tasks<br>
+      • Email management<br>
+      • Social media support<br>
+      • Research tasks<br>
+      • Willing to learn new tools
+    </p>
+  </div>
+
+  <div class="section" id="services">
+    <h2>Services I Can Offer</h2>
+    <p>
+      • Virtual assistance<br>
+      • Data entry<br>
+      • Research<br>
+      • Social media management<br>
+      • File organization
+    </p>
+  </div>
+
+  <div class="section" id="tools">
+    <h2>Tech/Tools</h2>
+    <div class="tools-list">
+      <div class="tool-item">Google Docs</div>
+      <div class="tool-item">Sheets</div>
+      <div class="tool-item">Slides</div>
+      <div class="tool-item">MS Word</div>
+      <div class="tool-item">Excel</div>
+      <div class="tool-item">Canva</div>
+      <div class="tool-item">Trello</div>
+      <div class="tool-item">ChatGPT</div>
+    </div>
+  </div>
+
+  <div class="section" id="projects">
+    <h2>Project Showcase</h2>
+    <div class="projects-grid">
+      <div class="project-card">
+        <h3>Email Inbox Cleanup</h3>
+        <p>Organized a 200-email inbox with labels and reply templates.</p>
+      </div>
+      <div class="project-card">
+        <h3>Canva Social Media Posts</h3>
+        <p>Designed and captioned 4 sample social media posts.</p>
+      </div>
+      <div class="project-card">
+        <h3>Data Entry Sample</h3>
+        <p>Created a Google Sheet for client information management.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="section" id="contact">
+    <h2>Contact Me</h2>
+    <p>
+      📧 Email: jlibanez666@gmail.com<br>
+      📱 Phone: 09604491537<br>
+      Facebook: https://www.facebook.com/oxc.xeto
+    </p>
+  </div>
+</div>
+
+<script>
+  function toggleTheme() {
+    const current = document.documentElement.getAttribute("data-theme");
+    document.documentElement.setAttribute(
+      "data-theme",
+      current === "dark" ? "light" : "dark"
+    );
+  }
+
+  // Scroll fade-in effect
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting){
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.2 });
+
+  document.querySelectorAll('.profile, .section').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
+      padding: 10px 14px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 0.9rem;
+      transition: 0.3s;
+      z-index: 20;
+    }
+
+    header {
+      text-align: center;
+      padding: 50px 20px;
+      position: relative;
+      background: var(--card);
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      z-index: 15;
+    }
+
+    .logo {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      font-weight: bold;
+      font-size: 1.5rem;
+      color: var(--accent);
+      font-family: 'Arial', sans-serif;
+    }
+
+    .container {
+      max-width: 950px;
+      margin: auto;
+      padding: 20px;
+    }
+
+    .profile {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      background: var(--card);
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .profile.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .profile img {
+      width: 130px;
+      height: 130px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid var(--accent);
+      margin-bottom: 15px;
+    }
+
+    h1 {
+      font-size: 2rem;
+      margin: 10px 0;
+    }
+
+    p {
+      line-height: 1.6;
+      font-size: 1rem;
+    }
+
+    .section {
+      background: var(--card);
+      padding: 25px;
+      margin-top: 20px;
+      border-radius: 14px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .btns, .download-btns {
+      margin-top: 20px;
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .btn {
+      padding: 12px 20px;
+      background: var(--accent);
+      color: white;
+      text-decoration: none;
+      border-radius: 10px;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      opacity: 0.8;
+      transform: translateY(-2px);
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin-top: 15px;
+    }
+
+    .project-card {
+      background: var(--accent);
+      color: white;
+      padding: 20px;
+      border-radius: 12px;
+      transition: transform 0.3s, box-shadow 0.3s;
+      cursor: pointer;
+    }
+
+    .project-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+    }
+
+    .social-icons {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin-top: 15px;
+    }
+
+    .social-icons a {
+      text-decoration: none;
+      color: var(--accent);
+      font-size: 1.5rem;
+      transition: transform 0.3s, color 0.3s;
+    }
+
+    .social-icons a:hover {
+      color: #444;
+      transform: scale(1.2);
+    }
+
   </style>
 </head>
 <body>

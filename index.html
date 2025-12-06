@@ -27,14 +27,39 @@
       transition: background 0.3s, color 0.3s;
     }
 
+    .theme-toggle {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background: var(--accent);
+      color: white;
+      padding: 10px 14px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 0.9rem;
+      transition: 0.3s;
+      z-index: 10;
+    }
+
     header {
       text-align: center;
-      padding: 40px 20px;
+      padding: 50px 20px;
       animation: fadeIn 1s ease-in-out;
+      position: relative;
+    }
+
+    .logo {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      font-weight: bold;
+      font-size: 1.5rem;
+      color: var(--accent);
+      font-family: 'Arial', sans-serif;
     }
 
     .container {
-      max-width: 900px;
+      max-width: 950px;
       margin: auto;
       padding: 20px;
     }
@@ -79,7 +104,7 @@
       animation: fadeIn 1.3s ease;
     }
 
-    .btns {
+    .btns, .download-btns {
       margin-top: 20px;
       display: flex;
       gap: 15px;
@@ -102,17 +127,23 @@
       transform: translateY(-2px);
     }
 
-    .theme-toggle {
-      position: fixed;
-      top: 20px;
-      right: 20px;
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin-top: 15px;
+    }
+
+    .project-card {
       background: var(--accent);
       color: white;
-      padding: 10px 14px;
-      border-radius: 8px;
-      cursor: pointer;
-      font-size: 0.9rem;
-      transition: 0.3s;
+      padding: 20px;
+      border-radius: 12px;
+      transition: transform 0.3s;
+    }
+
+    .project-card:hover {
+      transform: translateY(-5px);
     }
 
     @keyframes fadeIn {
@@ -124,31 +155,34 @@
       0% { opacity: 0; transform: translateY(20px); }
       100% { opacity: 1; transform: translateY(0); }
     }
+
   </style>
 </head>
 <body>
 
 <div class="theme-toggle" onclick="toggleTheme()">Toggle Theme</div>
-
 <header>
+  <div class="logo">JL</div>
   <h1>Virtual Assistant Portfolio</h1>
 </header>
 
 <div class="container">
-
   <div class="profile">
     <img src="https://via.placeholder.com/130" alt="Profile Photo" />
-    <h1>Hi, I'm Your VA!</h1>
+    <h1>Hi, I'm John Lloyd!</h1>
     <p>
       I am a <strong>college student</strong> who is new to the Virtual Assistant industry.
-      I decided to begin this journey because I want to <strong>fund my tuition</strong> while
-      building valuable skills that will help me grow professionally.
-      I may be new, but I am motivated, fast-learning, and committed to doing my best.
+      I started this journey to <strong>fund my tuition</strong> while gaining valuable skills.
+      I am motivated, fast-learning, and committed to providing high-quality support.
     </p>
     <div class="btns">
-      <a class="btn" href="#skills">My Skills</a>
+      <a class="btn" href="#skills">Skills</a>
       <a class="btn" href="#services">Services</a>
+      <a class="btn" href="#projects">Projects</a>
       <a class="btn" href="#contact">Contact</a>
+    </div>
+    <div class="download-btns">
+      <a class="btn" href="resume.pdf" download>Download Resume</a>
     </div>
   </div>
 
@@ -157,9 +191,9 @@
     <p>
       • Basic admin tasks<br>
       • Email management<br>
-      • Social media familiarity<br>
+      • Social media support<br>
       • Research tasks<br>
-      • Willing to learn anything needed
+      • Willing to learn new tools
     </p>
   </div>
 
@@ -167,22 +201,39 @@
     <h2>Services I Can Offer</h2>
     <p>
       • Virtual assistance<br>
-      • Simple data entry<br>
-      • Online research<br>
-      • Social media support<br>
+      • Data entry<br>
+      • Research<br>
+      • Social media management<br>
       • File organization
     </p>
+  </div>
+
+  <div class="section" id="projects">
+    <h2>Project Showcase</h2>
+    <div class="projects-grid">
+      <div class="project-card">
+        <h3>Email Inbox Cleanup</h3>
+        <p>Organized a 200-email inbox with labels and reply templates.</p>
+      </div>
+      <div class="project-card">
+        <h3>Canva Social Media Posts</h3>
+        <p>Designed and captioned 4 sample social media posts.</p>
+      </div>
+      <div class="project-card">
+        <h3>Data Entry Sample</h3>
+        <p>Created a Google Sheet for client information management.</p>
+      </div>
+    </div>
   </div>
 
   <div class="section" id="contact">
     <h2>Contact Me</h2>
     <p>
-      Email: yourname@gmail.com<br>
-      Facebook: fb.com/yourprofile<br>
-      WhatsApp / Phone: 09XX-XXX-XXXX
+      📧 Email: yourname@gmail.com<br>
+      📱 Phone: 09XX-XXX-XXXX<br>
+      Facebook: fb.com/yourprofile
     </p>
   </div>
-
 </div>
 
 <script>

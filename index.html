@@ -61,29 +61,6 @@
       font-family: 'Arial', sans-serif;
     }
 
-    nav {
-      position: sticky;
-      top: 0;
-      background: var(--card);
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      padding: 10px 0;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-      z-index: 10;
-    }
-
-    nav a {
-      text-decoration: none;
-      color: var(--text);
-      font-weight: bold;
-      transition: color 0.3s;
-    }
-
-    nav a.active {
-      color: var(--accent);
-    }
-
     .container {
       max-width: 950px;
       margin: auto;
@@ -217,13 +194,6 @@
   <h1>Virtual Assistant Portfolio</h1>
 </header>
 
-<nav id="navbar">
-  <a href="#skills">Skills</a>
-  <a href="#services">Services</a>
-  <a href="#projects">Projects</a>
-  <a href="#contact">Contact</a>
-</nav>
-
 <div class="container">
   <div class="profile">
     <img src="https://via.placeholder.com/130" alt="Profile Photo" />
@@ -318,22 +288,6 @@
   }, { threshold: 0.2 });
 
   document.querySelectorAll('.profile, .section').forEach(el => observer.observe(el));
-
-  // Active nav link highlighting
-  const sections = document.querySelectorAll('section, .profile');
-  const navLinks = document.querySelectorAll('nav a');
-
-  window.addEventListener('scroll', () => {
-    let current = '';
-    sections.forEach(section => {
-      const sectionTop = section.offsetTop - 60;
-      if(pageYOffset >= sectionTop){ current = section.getAttribute('id'); }
-    });
-    navLinks.forEach(link => {
-      link.classList.remove('active');
-      if(link.getAttribute('href') === '#' + current){ link.classList.add('active'); }
-    });
-  });
 </script>
 
 </body>

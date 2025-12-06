@@ -152,10 +152,18 @@
     }
 
     .project-card {
-      background: var(--accent);
+      position: relative;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
       color: white;
       padding: 20px;
       border-radius: 12px;
+      height: 180px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      box-shadow: inset 0 0 0 1000px rgba(0,0,0,0.45);
       transition: transform 0.3s, box-shadow 0.3s;
       cursor: pointer;
     }
@@ -212,12 +220,12 @@
 
 <div class="container">
   <div class="profile">
-    <img src="photologo.jpg.jpg" alt="Profile Photo" />
+    <img src="https://via.placeholder.com/130" alt="Profile Photo" />
     <h1>Hi, I'm John Lloyd!</h1>
     <p>
       I am a <strong>college student</strong> new to the Virtual Assistant industry.
-      I started this journey to <strong>gain valuable skills.
-      Motivated, fast-learning, and committed to high-quality support.</strong>
+      I started this journey to <strong>fund my tuition</strong> while gaining valuable skills.
+      Motivated, fast-learning, and committed to high-quality support.
     </p>
     <div class="btns">
       <a class="btn" href="#skills">Skills</a>
@@ -242,6 +250,7 @@
       • Basic admin tasks<br>
       • Email management<br>
       • Social media support<br>
+      • Research tasks<br>
       • Willing to learn new tools
     </p>
   </div>
@@ -249,7 +258,9 @@
   <div class="section" id="services">
     <h2>Services I Can Offer</h2>
     <p>
+      • Virtual assistance<br>
       • Data entry<br>
+      • Research<br>
       • Social media management<br>
       • File organization
     </p>
@@ -272,10 +283,19 @@
   <div class="section" id="projects">
     <h2>Project Showcase</h2>
     <div class="projects-grid">
-      <div class="project-card">
+      <div class="project-card" style="background-image: url('https://images.unsplash.com/photo-1587614382346-4ec70e388b28?w=600');">
         <h3>Email Inbox Cleanup</h3>
         <p>Organized a 200-email inbox with labels and reply templates.</p>
       </div>
+      <div class="project-card" style="background-image: url('https://images.unsplash.com/photo-1508780709619-79562169bc64?w=600');">
+        <h3>Canva Social Media Posts</h3>
+        <p>Designed and captioned 4 sample social media posts.</p>
+      </div>
+      <div class="project-card" style="background-image: url('https://images.unsplash.com/photo-1581091012184-5cbf73a382b4?w=600');">
+        <h3>Data Entry Sample</h3>
+        <p>Created a Google Sheet for client information management.</p>
+      </div>
+    </div>
       <div class="project-card">
         <h3>Canva Social Media Posts</h3>
         <p>Designed and captioned 4 sample social media posts.</p>

@@ -5,57 +5,119 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Virtual Assistant Portfolio</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
+    :root {
+      --primary: #2d89ff;
+      --primary-light: #e8f1ff;
+      --text-dark: #1e1e1e;
+      --text-light: #555;
+      --bg: #f5f7fa;
+      --card-bg: #ffffff;
+      --radius: 14px;
+      --shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+    }
+
+    * {
       margin: 0;
       padding: 0;
-      background: #f8f8f8;
-      color: #333;
+      box-sizing: border-box;
+      font-family: "Poppins", Arial, sans-serif;
     }
+
+    body {
+      background: var(--bg);
+      color: var(--text-dark);
+      line-height: 1.6;
+    }
+
     header {
-      background: #4a90e2;
-      color: white;
-      padding: 30px;
+      background: linear-gradient(135deg, #2d89ff, #6aaeff);
+      padding: 60px 20px;
       text-align: center;
+      color: white;
+      box-shadow: var(--shadow);
     }
+
+    header h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    header p {
+      opacity: 0.9;
+      font-size: 1.1rem;
+    }
+
     section {
-      padding: 30px;
-      max-width: 900px;
-      margin: auto;
-      background: white;
-      margin-top: 20px;
-      border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      max-width: 950px;
+      margin: 30px auto;
+      background: var(--card-bg);
+      padding: 35px;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      transition: transform 0.3s ease;
     }
+
+    section:hover {
+      transform: translateY(-3px);
+    }
+
     h2 {
-      color: #4a90e2;
+      color: var(--primary);
+      font-size: 1.8rem;
+      border-left: 6px solid var(--primary);
+      padding-left: 12px;
+      margin-bottom: 20px;
+      font-weight: 600;
     }
+
     ul {
-      line-height: 1.7;
+      margin-left: 20px;
+      margin-bottom: 20px;
     }
-    .contact p {
-      margin: 5px 0;
+
+    li {
+      margin-bottom: 8px;
     }
+
     .footer {
       text-align: center;
-      padding: 20px;
-      color: #555;
+      padding: 25px;
+      font-size: 0.9rem;
+      color: var(--text-light);
+      margin-top: 40px;
     }
+
+    .button {
+      display: inline-block;
+      background: var(--primary);
+      color: white;
+      padding: 12px 22px;
+      border-radius: var(--radius);
+      text-decoration: none;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+
+    .button:hover {
+      background: #1b6de0;
+    }
+
   </style>
 </head>
 <body>
 
 <header>
   <h1>John Lloyd Ibanez</h1>
-  <p>Virtual Assistant | Administrative Support | Social Media Assistance</p>
-  <p>📧 Email: jlibanez666@gmail.com | 📱 Phone: 09604491537 | 📍 Philippines</p>
+  <p>Virtual Assistant • Administrative Support • Social Media Assistance</p>
+  <p>📧 jlibanez666@gmail.com | 📱 09604491537 | 📍 Philippines</p>
 </header>
 
 <section>
   <h2>About Me</h2>
-  <p>Hi! I’m <strong>John Lloyd Ibanez</strong>, a college student and a motivated beginner in the Virtual Assistance field. I may be new to this industry, but I am highly committed to learning, improving, and delivering quality work.</p>
-  <p>I am currently pursuing my studies while working part-time as a VA to help fund my tuition and support my education. Because of this, I’ve developed strong discipline, time management, and adaptability — skills that I apply to every task I handle.</p>
-  <p>I am detail-oriented, organized, and always willing to learn new tools and processes. My goal is to provide reliable support to clients and help them lighten their workload while I continue growing my experience in the VA world.</p>
+  <p>Hi! I’m <strong>John Lloyd Ibanez</strong>, a college student and a motivated beginner in the Virtual Assistance field. Even though I am new to the industry, I am passionate about learning, improving, and delivering high-quality work.</p>
+  <p>I am currently pursuing my studies while working part-time as a VA to help fund my tuition and support my education. Balancing academics and work has strengthened my discipline, time management, and adaptability — qualities that reflect in my work ethic.</p>
+  <p>I am detail-oriented, organized, and committed to learning new tools and systems. My goal is to provide reliable support to clients and help streamline their workload while I continue building my experience in the VA field.</p>
 </section>
 
 <section>
@@ -68,18 +130,21 @@
     <li>Document organization (Google Workspace, MS Office)</li>
     <li>File management</li>
   </ul>
+
   <h3>Social Media Assistance</h3>
   <ul>
     <li>Basic Canva design</li>
     <li>Caption writing</li>
     <li>Content scheduling (Facebook, IG, TikTok)</li>
   </ul>
+
   <h3>Customer Service</h3>
   <ul>
     <li>Chat support</li>
     <li>Responding to inquiries</li>
     <li>Professional communication</li>
   </ul>
+
   <h3>Tools</h3>
   <ul>
     <li>Google Docs, Sheets, Slides</li>
@@ -113,7 +178,7 @@
 
   <h3>Sample 2 — Canva Social Media Graphics</h3>
   <ul>
-    <li>Created 4 sample social media posts</li>
+    <li>Created 4 social media posts</li>
     <li>Wrote captions for each post</li>
   </ul>
 
@@ -123,16 +188,16 @@
   </ul>
 </section>
 
-
-<section class="contact">
+<section>
   <h2>Contact Me</h2>
-  <p>📧 Email: jlibanez666@gmail.com </p>
-  <p>📱 Phone: 09604491537 </p>
-  <p>Available for part-time, full-time, or project-based tasks.</p>
+  <p>📧 Email: <strong>jlibanez666@gmail.com</strong></p>
+  <p>📱 Phone: <strong>09604491537</strong></p>
+  <br>
+  <a href="mailto:jlibanez666@gmail.com" class="button">Send Email</a>
 </section>
 
 <div class="footer">
-  <p>© John Lloyd Ibanez — My Portfolio</p>
+  <p>© 2025 John Lloyd Ibanez • Virtual Assistant Portfolio</p>
 </div>
 
 </body>

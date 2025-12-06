@@ -25,6 +25,7 @@
       margin: 0;
       padding: 0;
       transition: background 0.3s, color 0.3s;
+      scroll-behavior: smooth;
     }
 
     .theme-toggle {
@@ -139,11 +140,32 @@
       color: white;
       padding: 20px;
       border-radius: 12px;
-      transition: transform 0.3s;
+      transition: transform 0.3s, box-shadow 0.3s;
+      cursor: pointer;
     }
 
     .project-card:hover {
       transform: translateY(-5px);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+    }
+
+    .social-icons {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin-top: 15px;
+    }
+
+    .social-icons a {
+      text-decoration: none;
+      color: var(--accent);
+      font-size: 1.5rem;
+      transition: transform 0.3s, color 0.3s;
+    }
+
+    .social-icons a:hover {
+      color: #444;
+      transform: scale(1.2);
     }
 
     @keyframes fadeIn {
@@ -171,9 +193,9 @@
     <img src="https://via.placeholder.com/130" alt="Profile Photo" />
     <h1>Hi, I'm John Lloyd!</h1>
     <p>
-      I am a <strong>college student</strong> who is new to the Virtual Assistant industry.
+      I am a <strong>college student</strong> new to the Virtual Assistant industry.
       I started this journey to <strong>fund my tuition</strong> while gaining valuable skills.
-      I am motivated, fast-learning, and committed to providing high-quality support.
+      Motivated, fast-learning, and committed to high-quality support.
     </p>
     <div class="btns">
       <a class="btn" href="#skills">Skills</a>
@@ -183,6 +205,11 @@
     </div>
     <div class="download-btns">
       <a class="btn" href="resume.pdf" download>Download Resume</a>
+    </div>
+    <div class="social-icons">
+      <a href="#" title="LinkedIn">🔗</a>
+      <a href="#" title="Facebook">📘</a>
+      <a href="#" title="WhatsApp">💬</a>
     </div>
   </div>
 
